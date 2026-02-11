@@ -1,0 +1,10 @@
+name = "atomic-formal-reasoning"
+version = "0.1.0"
+defaultTargets = ["AtomicFormalReasoning"]
+
+[[lean_lib]]
+name = "AtomicFormalReasoning"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"

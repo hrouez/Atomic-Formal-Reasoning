@@ -1,0 +1,1 @@
+{"id": "PROOFS_COMPLEX_001", "goal": "z * conj z = z.re^2 + z.im^2", "style": "atomic_no_tactics", "steps": ["apply Complex.ext", "calc (z * conj z).re = z.re * (conj z).re - z.im * (conj z).im := rfl", "calc ... = z.re * z.re - z.im * (-z.im) := rfl", "calc ... = z.re * z.re + z.im * z.im := by rw [mul_neg, sub_neg_eq_add]"], "verified": true}

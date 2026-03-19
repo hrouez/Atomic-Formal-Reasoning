@@ -3,8 +3,9 @@ import Mathlib.Data.Complex.Basic
 open ComplexConjugate
 open Complex
 
-
-
+----------------------------------------------------------------------------------------------------------------------
+-- Application 1 :  z * conj z +  (z + conj z) + I * (z - conj z) = ((z.re^2 + z.im^2 + 2 * z.re - 2 * z.im : ℝ) : ℂ)
+----------------------------------------------------------------------------------------------------------------------
 theorem application_1 (z : ℂ) :
   z * conj z +  (z + conj z) + I * (z - conj z) = ((z.re^2 + z.im^2 + 2 * z.re - 2 * z.im : ℝ) : ℂ) :=
 
@@ -12,7 +13,7 @@ theorem application_1 (z : ℂ) :
 
   z * conj z +  (z + conj z) + I * (z - conj z)
 
-  = ((z.re^2 + z.im^2 : ℝ) : ℂ) +  ((2 * z.re : ℝ) : ℂ) + I * ((2 * z.im : ℝ) * I) := by rw [mul_conj_1,add_conj_1,sub_conj_1]
+  = ((z.re^2 + z.im^2 : ℝ) : ℂ) +  ((2 * z.re : ℝ) : ℂ) + I * ((2 * z.im : ℝ) * I) := by rw [mul_conj_z,add_conj_z,sub_conj_z]
 
     _ =  ((z.re^2 + z.im^2 : ℝ) : ℂ) + ((2 * z.re : ℝ): ℂ)  + (I * ((2 * z.im : ℝ) : ℂ)  * I) := by rw [mul_assoc, mul_comm I]
 
@@ -53,3 +54,6 @@ theorem application_1 (z : ℂ) :
     _ = ((z.re^2 + z.im^2 + 2 * z.re - 2 * z.im : ℝ) : ℂ) :=
 
       by rw [← Complex.ofReal_add, ← Complex.ofReal_sub]
+
+
+#check application_1 (3+I : ℂ)
